@@ -8,7 +8,9 @@ from fastapi import FastAPI, File, UploadFile, WebSocket, WebSocketDisconnect, F
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 from modelgpt import handle_image_upload, handle_chat_message
+from model_api import process_uploaded_image  # Import for new endpoint
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -16,8 +18,6 @@ logger = logging.getLogger(__name__)
 
 # Create FastAPI app
 app = FastAPI(title="Plant Disease Diagnosis Chat")
-
-from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
@@ -27,9 +27,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Create uploads directory if it doesn't exist
+# Create uploads directories if they don't exist
 UPLOAD_DIR = "uploads"
+IMAGE_DIR = "image"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
+os.makedirs(IMAGE_DIR, exist_ok=True)
 
 # Mount only the uploads directory as static files
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
@@ -121,6 +123,54 @@ async def chat_message(request: ChatRequest):
     except Exception as e:
         logger.error(f"Error processing chat message: {str(e)}")
         return ChatResponse(success=False, error=f"Error processing chat message: {str(e)}")
+
+# New endpoint for plant disease diagnosis
+@app.post("/api/diagnose-plant-disease/")
+async def diagnose_plant_disease(
+    file: UploadFile = File(...),
+    symptoms: Optional[str] = Form(None)
+):
+    """
+    Upload an image of a plant and get a diagnosis of potential diseases.
+    
+    - **file**: The image file to upload
+    - **symptoms**: Optional description of symptoms observed
+    """
+    # Validate file is an image
+    if not file.content_type.startswith("image/"):
+        raise HTTPException(
+            status_code=400, 
+            detail="Uploaded file must be an image"
+        )
+    
+    try:
+        # Generate a unique filename to prevent collisions
+        file_extension = os.path.splitext(file.filename)[1]
+        unique_filename = f"{uuid.uuid4()}{file_extension}"
+        file_path = os.path.join(IMAGE_DIR, unique_filename)
+        
+        # Save the uploaded file
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+        
+        # Process the image for disease detection
+        result = await process_uploaded_image(file_path, symptoms)
+        
+        # Clean up the file after processing
+        if os.path.exists(file_path):
+            os.remove(file_path)
+        
+        return JSONResponse(content=result)
+        
+    except Exception as e:
+        # Clean up on error
+        if 'file_path' in locals() and os.path.exists(file_path):
+            os.remove(file_path)
+            
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error processing image: {str(e)}"
+        )
 
 @app.websocket("/ws/{session_id}")
 async def websocket_endpoint(websocket: WebSocket, session_id: str):
