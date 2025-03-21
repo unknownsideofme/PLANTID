@@ -1,0 +1,76 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    max-height: calc(100vh - 8rem);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+  }
+  
+  .message-input-container {
+    border-top: 1px solid #e5ebe6;
+    padding: 16px;
+  }
+  
+  .message-form {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .upload-button {
+    padding: 8px;
+    background-color: #f3f6f4;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+  }
+  
+  .upload-button:hover {
+    background-color: #e5ebe6;
+  }
+  
+  .message-input {
+    flex: 1;
+    border: 1px solid #d1dbd3;
+    border-radius: 9999px;
+    padding: 8px 16px;
+  }
+  
+  .message-input:focus {
+    outline: none;
+    border-color: #2bd37a;
+    box-shadow: 0 0 0 2px rgba(59, 246, 118, 0.3);
+  }
+  
+  .send-button {
+    padding: 8px;
+    background-color: #2bd37a;
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+  }
+  
+  .send-button:hover {
+    background-color: #0faa58;
+  }
+  
+  .send-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* You may need to define these variables to match your original Tailwind theme */
+  :root {
+    --color-primary: #2bd37a;
+    --color-primary-dark: #0faa58;
+    --color-secondary: #f3f6f4;
+    --color-secondary-dark: #e5ebe6;
+  }

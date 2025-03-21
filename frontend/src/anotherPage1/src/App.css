@@ -1,0 +1,40 @@
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    top: -40px;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  @media (min-width: 768px) {
+    .main-content {
+      flex-direction: row;
+    }
+  }
+  
+  .chat-container {
+    flex: 1;
+    padding: 16px;
+  }
+  
+  .diagnosis-container {
+    width: 100%;
+    max-width: 384px;
+    background: white;
+    border-left: 1px solid #e5e7eb;
+    padding: 16px;
+  }
+  
+  @media (min-width: 768px) {
+    .diagnosis-container {
+      width: 384px;
+    }
+  }
+
+  
+  

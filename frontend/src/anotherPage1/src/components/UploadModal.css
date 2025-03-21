@@ -1,0 +1,153 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(93, 116, 93, 0.441);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+  }
+  
+  .modal-container {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .modal-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    color: #6b7280;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  
+  .drop-zone {
+    border: 2px dashed #d1dbd2;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .drag-active {
+    border-color: #2bd37a;
+    background-color: rgba(59, 130, 246, 0.1);
+  }
+  
+  .image-preview {
+    position: relative;
+  }
+  
+  .preview-image {
+    max-height: 200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    display: block;
+  }
+  
+  .remove-button {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+  }
+  
+  .upload-icon {
+    font-size: 2rem;
+    color: #9ca3af;
+    margin-bottom: 8px;
+  }
+  
+  .subtext {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 8px;
+  }
+  
+  .file-label {
+    background: #2bd37a;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .hidden-input {
+    display: none;
+  }
+  
+  .input-group {
+    margin-bottom: 16px;
+  }
+  
+  .input-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .text-area {
+    width: 100%;
+    border: 1px solid #d1dbd2;
+    border-radius: 4px;
+    padding: 8px;
+    height: 80px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .cancel-button {
+    background: none;
+    border: 1px solid #d1dbd2;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cancel-button:hover {
+    background: #a0b1a21a;
+  }
+  
+  .submit-button {
+    background: #2bd37a;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .submit-button:hover:not(:disabled) {
+    background: #2bd37a;
+  }
+  

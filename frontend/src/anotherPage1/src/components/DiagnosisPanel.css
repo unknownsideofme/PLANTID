@@ -1,0 +1,65 @@
+.diagnosis-panel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+  }
+
+  .icon{
+    color: #2bd37a;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .image-section {
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .image-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+  }
+  
+  .placeholder {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    color: #666;
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+  }
+  
+  .diagnosis-section {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .diagnosis-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #eef2ff;
+  }
+  
