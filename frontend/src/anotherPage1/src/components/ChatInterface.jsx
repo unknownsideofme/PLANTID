@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { FaCamera, FaPaperPlane } from 'react-icons/fa'
 import Message from './Message'
 import UploadModal from './UploadModal'
+import './ChatInterface.css'
 
 function ChatInterface({ messages, onSendMessage, onImageUpload }) {
   const [input, setInput] = useState('')
@@ -39,8 +40,8 @@ function ChatInterface({ messages, onSendMessage, onImageUpload }) {
   }
   
   return (
-    <div className="flex flex-col h-full max-h-[calc(100vh-8rem)] bg-white rounded-lg shadow-md">
-      <div className="flex-1 overflow-y-auto p-4">
+    <div className="chat-container">
+      <div className="message-list">
         {messages.map((message, index) => (
           <Message 
             key={`message-${message.id || index}-${message.timestamp?.getTime() || index}`} 
@@ -50,12 +51,12 @@ function ChatInterface({ messages, onSendMessage, onImageUpload }) {
         <div ref={messagesEndRef} />
       </div>
       
-      <div className="border-t border-gray-200 p-4">
-        <form onSubmit={handleSend} className="flex space-x-2">
+      <div className="message-input-container">
+        <form onSubmit={handleSend} className="message-form">
           <button 
             type="button" 
             onClick={handleUploadClick}
-            className="p-2 bg-secondary hover:bg-secondary-dark rounded-full"
+            className="upload-button"
             title="Upload image"
           >
             <FaCamera />
@@ -66,13 +67,13 @@ function ChatInterface({ messages, onSendMessage, onImageUpload }) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 border border-gray-300 rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary"
+            className="message-input"
           />
           
           <button 
             type="submit" 
             disabled={!input.trim()}
-            className="p-2 bg-primary hover:bg-primary-dark text-white rounded-full disabled:opacity-50"
+            className="send-button"
           >
             <FaPaperPlane />
           </button>
@@ -90,4 +91,4 @@ function ChatInterface({ messages, onSendMessage, onImageUpload }) {
   )
 }
 
-export default ChatInterface    
+export default ChatInterface
