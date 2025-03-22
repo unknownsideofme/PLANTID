@@ -1,0 +1,64 @@
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    color: #333;
+}
+
+header {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #005f73;
+} */
+
+section {
+    background: white;
+    /* background: linear-gradient(to right, #e0f7fa, #ffffff); */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.how-it-works h2, .benefits h2,.features h2,.future-development h2,.cta h2 {
+    color: #008cba;
+}
+
+/* .how-it-works, .benefits,.features,.future-development,.cta ul{
+    color: black;
+} */
+
+ul {
+    padding-left: 20px;
+    /* color: black; */
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #008cba;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #007aa3;
+}
+

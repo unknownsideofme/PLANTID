@@ -117,7 +117,7 @@ const App = () => {
       await new Promise(resolve => setTimeout(resolve, 2500));
       
       // This is where the actual fetch would happen
-      const response = await fetch("localhost:8000/api/diagnose-plant-disease/", {
+      const response = await fetch("http://4.240.108.215//api/diagnose-plant-disease/", {
         method: "POST",
         body: formData,
       });
@@ -146,7 +146,7 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="app-container1">
       <div className="overlay"></div>
       <div className="content-wrapper">
         {/* <header className="site-header">

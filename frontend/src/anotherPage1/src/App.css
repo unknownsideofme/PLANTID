@@ -1,8 +1,8 @@
 .app-container {
-    min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
-    top: -40px;
+
   }
   
   .main-content {

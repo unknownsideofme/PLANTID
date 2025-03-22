@@ -4,6 +4,7 @@ import { FaLeaf } from 'react-icons/fa';
 import './DiagnosisPanel.css';
 
 function DiagnosisPanel({ selectedImage, latestDiagnosis }) {
+  console.log(selectedImage);
   return (
     <div className="diagnosis-panel">
       <h2 className="title">
@@ -13,6 +14,7 @@ function DiagnosisPanel({ selectedImage, latestDiagnosis }) {
       
       <div className="image-section">
         <h3 className="subtitle">Selected Image</h3>
+        
         {selectedImage ? (
           <div className="image-container">
             <img 
@@ -21,11 +23,11 @@ function DiagnosisPanel({ selectedImage, latestDiagnosis }) {
               className="image"
             />
           </div>
+          
         ) : (
           <div className="placeholder">No image selected</div>
         )}
       </div>
-      
       <div className="diagnosis-section">
         <h3 className="subtitle">Latest Diagnosis</h3>
         {latestDiagnosis ? (

@@ -1,65 +1,102 @@
-.diagnosis-panel {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-right: 10px;
-  }
+/* Original DiagnosisPanel.css with added scrollbar functionality */
 
-  .icon{
-    color: #2bd37a;
-  }
+.diagnosis-panel {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.image-section, .diagnosis-section {
+  margin-bottom: 20px;
+}
+
+.image-container {
+  width: 100%;
+  border-radius: 6px;
   
-  .title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-  }
+  border: 1px solid #eee;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* New styles for scrollable diagnosis container */
+.diagnosis-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.diagnosis-container {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 15px;
+  border: 1px solid #eee;
   
-  .image-section {
-    margin-bottom: 1rem;
-  }
-  
-  .subtitle {
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-  
-  .image-container {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .image {
-    width: 100%;
-    height: 12rem;
-    object-fit: cover;
-  }
-  
-  .placeholder {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    color: #666;
-    height: 12rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9;
-  }
-  
-  .diagnosis-section {
-    flex: 1;
-    overflow-y: auto;
-  }
-  
-  .diagnosis-container {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 1rem;
-    background-color: #eef2ff;
-  }
-  
+}
+
+.markdown-content {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-y: scroll;
+  max-height: 150px;
+}
+
+.placeholder {
+  color: #888;
+  font-style: italic;
+  padding: 15px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  flex: 1;
+  overflow-y: scroll;
+  max-height:150px; /* Limit height and enable scrolling */
+}
+
+/* Custom scrollbar styling */
+.diagnosis-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.diagnosis-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.diagnosis-container::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 4px;
+}
+
+.diagnosis-container::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}

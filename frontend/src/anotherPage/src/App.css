@@ -81,14 +81,14 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
 }
 
-.app-container {
+.app-container1 {
   min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   padding-top: var(--header-height);
   background: #f0eee6;
-  margin-top: 35px;
+ 
 }
 
 .app-container.dark {

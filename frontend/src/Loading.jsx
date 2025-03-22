@@ -83,7 +83,7 @@ const Loading = () => {
               <h1 className="headContainerDes">Identify plant diseases. Get instant solutions.
                 <div>Chat Now & Get Answers.</div></h1>
               <p className="headContainerContent">Revolutionize your farming with <b>AI-powered plant disease detection</b>! <br />Identify plant diseases early, make smarter decisions & boost crop health for a higher yield.</p>
-              <button className="headContainerBtn" onClick={() => navigate("/anotherpage1")}>Ask AI About Your Crops <img src={AIarrow} alt="arrow" /></button>
+              <button className="headContainerBtn" onClick={() => navigate("/AIpoweredPlantDiseaseDetection")}>Ask AI About Your Crops <img src={AIarrow} alt="arrow" /></button>
             </div>
             <div className="firstContainer">
               <div className="PScontainer">
@@ -93,7 +93,7 @@ const Loading = () => {
 
 
 
-                <button className="getStarted" onClick={() => navigate("/another")}>
+                <button className="getStarted" onClick={() => navigate("/EarlyDiseaseDetection")}>
                   Get Started <img src={AIarrow} alt="arrow" />
                 </button>
               </div>
@@ -134,7 +134,11 @@ const Loading = () => {
                 <a href="https://drive.google.com/file/d/1K33ODObKbPf_MwNv_kDeZHTnBuU-vKWa/view" target="_blank" rel="noopener noreferrer">
                    <button className="tutorial">Watch <img src={ArrowWatch} alt="Arrow" /></button> 
                    </a>
-                  <button className="learnMore">Learn More <img src={learnMoreIcon} alt="learnMoreIcon" /></button>
+                  {/* <button className="learnMore">Learn More <img src={learnMoreIcon} alt="learnMoreIcon" /></button> */}
+                  <button className="learnMore" onClick={() => navigate("/LearnMore")}>
+  Learn More <img src={learnMoreIcon} alt="learnMoreIcon" />
+</button>
+
                 </div>
               </div>
 
@@ -176,17 +180,21 @@ const Loading = () => {
               <div className="footerContainer">
               
                 <div className="footerSection about">
-                  <h3>About Us</h3>
+                  <h3>About Plantid</h3>
                   <p>Your personal assistant for plant health and care. </p>
                 </div>
                 <hr></hr>
+                <div className="footerSection">
+                  <h3>Contact Us</h3>
+                Questions or feedback? <a href="mailto:rakshit.debanjan1@gmail.com"> Email Us</a>
+                </div>
                 <div className="footerSection links">
                   <h3>Quick Links </h3>
                   <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Blog</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Lists_of_plant_diseases">Common Plant Diseases</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Houseplant">Houseplant Care</a></li>
+                    
+                    <li><a href="https://gardensolution.in/">Garden Solutions</a></li>
                   </ul>
                 </div>
               </div>

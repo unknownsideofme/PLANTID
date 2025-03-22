@@ -259,15 +259,9 @@ gap: 6px;
 
 .mainContent {
   font-family: "Crimson Text", serif;
-  /* font-family: "Roboto", sans-serif; */
-  /* margin: 0px 30px; */
-  /* background: linear-gradient(135deg, #004d40, #00796b, #004080, #001f3f); */
-  /* background: radial-gradient(circle at 40% 30%, #0eb684, #054e37, #223226); */
   background-size: cover;
   background-color: #f0eee6;
-  /* background-color: #2d2d2d; */
-  /* background: linear-gradient(-45deg, #000000, #384039, #3b9063, #2bd37a); */
-  /* border-radius: 8px; */
+ 
 }
 
 .headContainer {
@@ -275,8 +269,8 @@ gap: 6px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
+  margin-top: 25px;
+  /* margin-bottom: 30px; */
 }
 
 .headContainerName {
@@ -360,7 +354,7 @@ gap: 6px;
   padding: 30px;
   padding-left: 90px;
   margin-top: 0px; 
-  
+  padding-top: 0;
  
   /* background-color: #b8af8c51; */
  
@@ -419,13 +413,22 @@ padding: 30px;
   animation: slideInFromLeft 1s ease-out forwards;
 }
 
+.PScontent b{
+  background: linear-gradient(to bottom right, #f0eee6, #f1b24a);
+ 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 22px;
+ 
+}
+
 .PScontent {
   font-size: 18px;
   margin: 20px 0;
 
   line-height: 1.5;
   opacity: 0;
-
+color: white;
   animation: fadeIn 1s ease-out forwards;
   animation-delay: 0.2s;
   padding-bottom: 20px;
@@ -433,7 +436,7 @@ padding: 30px;
 
 .getStarted {
   
-  background: linear-gradient(to bottom right, #f0eee6, #f1b24a);
+  background: linear-gradient(to bottom right, #e5dbb0, #f1b24a);
   color: #ffffff;
   font-size: 18px;
   font-weight: bold;
@@ -518,6 +521,7 @@ gap: 5px;
   align-items: center;
   justify-content: space-between;
   padding: 60px 30px;
+  padding-top: 20px;
 margin-left: 70px;
 margin-right: 30px;
 gap: 100px;
@@ -564,7 +568,7 @@ gap: 100px;
   /* object-fit: cover; */
   border-radius: 20px;
   transition: transform 1s ease-in-out;
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 
 
@@ -760,7 +764,7 @@ gap: 6px;
 .thirdContainer {
   position: relative;
   width: 100vw;
-  height: 550px;
+  height: 610px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -791,6 +795,7 @@ gap: 6px;
   background: linear-gradient(to bottom right, #2bd37a, #004d40);
   line-height: 1.5;
   /* background: rgba(0, 0, 0, 0.25); */
+  color: white;
 }
 
 
