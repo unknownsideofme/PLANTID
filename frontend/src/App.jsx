@@ -12,7 +12,7 @@ import AnotherPage2 from "./anotherPage2/src/App";
 
 function App() {
   return (
-    <>
+   
       <Router>
         <Routes>
           <Route path="/" element={<Loading />} />
@@ -22,7 +22,7 @@ function App() {
           <Route path="/LearnMore" element={<AnotherPage2 />} />
         </Routes>
       </Router>
-    </>
+    
   );
 }
 
